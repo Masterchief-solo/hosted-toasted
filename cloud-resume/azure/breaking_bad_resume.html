@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Cook - Cybersecurity Professional | Lab Profile</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Oswald', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 191, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(135, 206, 250, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(30, 144, 255, 0.08) 0%, transparent 50%),
+                linear-gradient(135deg, #1a1a1a 0%, #2d5016 30%, #0a1a2a 70%, #1a1a1a 100%);
+            color: #e6e6e6;
+            min-height: 100vh;
+            padding: 20px 0;
+            overflow-x: hidden;
+        }
+
+        /* Chemical vapor effects with blue crystals */
+        .vapor {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .vapor::before,
+        .vapor::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(57, 255, 20, 0.1) 0%, transparent 70%);
+            animation: float-vapor 8s ease-in-out infinite;
+        }
+
+        .vapor::before {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            left: -150px;
+            animation-delay: -2s;
+        }
+
+        .vapor::after {
+            width: 400px;
+            height: 400px;
+            bottom: -200px;
+            right: -200px;
+            animation-delay: -5s;
+        }
+
+        /* Blue crystal formations */
+        .crystals {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .crystal {
+            position: absolute;
+            background: linear-gradient(45deg, 
+                rgba(0, 191, 255, 0.3) 0%, 
+                rgba(135, 206, 250, 0.2) 25%,
+                rgba(30, 144, 255, 0.15) 50%,
+                rgba(70, 130, 180, 0.1) 75%,
+                transparent 100%);
+            border-radius: 50% 20% 50% 20%;
+            animation: crystal-float 12s ease-in-out infinite;
+            box-shadow: 
+                0 0 20px rgba(0, 191, 255, 0.3),
+                inset 0 0 20px rgba(135, 206, 250, 0.2);
+            filter: blur(1px);
+        }
+
+        .crystal:nth-child(1) {
+            width: 80px;
+            height: 120px;
+            top: 15%;
+            right: 10%;
+            animation-delay: 0s;
+            transform: rotate(45deg);
+            opacity: 0.4;
+        }
+
+        .crystal:nth-child(2) {
+            width: 60px;
+            height: 90px;
+            bottom: 25%;
+            left: 8%;
+            animation-delay: -4s;
+            transform: rotate(-30deg);
+            opacity: 0.3;
+        }
+
+        .crystal:nth-child(3) {
+            width: 100px;
+            height: 140px;
+            top: 45%;
+            right: 5%;
+            animation-delay: -8s;
+            transform: rotate(60deg);
+            opacity: 0.5;
+        }
+
+        .crystal:nth-child(4) {
+            width: 70px;
+            height: 100px;
+            bottom: 10%;
+            left: 15%;
+            animation-delay: -2s;
+            transform: rotate(-45deg);
+            opacity: 0.35;
+        }
+
+        @keyframes crystal-float {
+            0%, 100% {
+                transform: translateY(0) scale(1) rotate(45deg);
+                opacity: 0.3;
+            }
+            33% {
+                transform: translateY(-20px) scale(1.05) rotate(55deg);
+                opacity: 0.5;
+            }
+            66% {
+                transform: translateY(10px) scale(0.95) rotate(40deg);
+                opacity: 0.4;
+            }
+        }
+
+        @keyframes float-vapor {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+                opacity: 0.1;
+            }
+            50% {
+                transform: translateY(-30px) scale(1.1);
+                opacity: 0.2;
+            }
+        }
+
+        .container {
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(0, 191, 255, 0.05) 0%, transparent 25%),
+                radial-gradient(circle at 90% 80%, rgba(135, 206, 250, 0.03) 0%, transparent 25%),
+                rgba(20, 20, 20, 0.95);
+            backdrop-filter: blur(10px);
+            border: 2px solid #39ff14;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 
+                0 0 30px rgba(57, 255, 20, 0.3),
+                0 0 60px rgba(0, 191, 255, 0.1),
+                inset 0 0 50px rgba(0, 0, 0, 0.5);
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            animation: slideUp 1s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #39ff14;
+        }
+
+        .periodic-table {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .element {
+            background: #39ff14;
+            color: #000;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            font-weight: 700;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+            animation: glow 2s ease-in-out infinite alternate;
+            border: 2px solid #2ecc40;
+            transition: transform 0.3s ease;
+        }
+
+        .element:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .element .number {
+            font-size: 0.9rem;
+            line-height: 1;
+        }
+
+        .element .symbol {
+            font-size: 1.4rem;
+            line-height: 1;
+            font-weight: 900;
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+            }
+            to {
+                box-shadow: 0 0 30px rgba(57, 255, 20, 0.8);
+            }
+        }
+
+        .name {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #39ff14;
+            text-shadow: 0 0 20px rgba(57, 255, 20, 0.7);
+            letter-spacing: 3px;
+            margin-bottom: 0.5rem;
+        }
+
+        .title {
+            font-size: 1.8rem;
+            color: #ffc107;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 1.1rem;
+            color: #cccccc;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-item a {
+            color: #39ff14;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #2ecc40;
+        }
+
+        /* Section Styling with blue accents */
+        .section {
+            margin-bottom: 3rem;
+            background: 
+                linear-gradient(145deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%),
+                radial-gradient(circle at 95% 5%, rgba(0, 191, 255, 0.08) 0%, transparent 50%);
+            border: 1px solid #39ff14;
+            border-radius: 8px;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 
+                0 4px 15px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(135, 206, 250, 0.1);
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #39ff14;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-icon {
+            font-size: 1.5rem;
+        }
+
+        /* Formula containers for sections */
+        .formula-header {
+            display: none;
+        }
+
+        /* Education & Certifications */
+        .education-item, .cert-grid {
+            margin-bottom: 1.5rem;
+        }
+
+        .education-item h3 {
+            color: #ffc107;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-item .location {
+            color: #39ff14;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .education-item .degree {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .education-item .date {
+            color: #888;
+            font-style: italic;
+        }
+
+        /* Certifications Grid */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .cert-category {
+            background: 
+                linear-gradient(145deg, rgba(57, 255, 20, 0.12) 0%, rgba(57, 255, 20, 0.06) 100%),
+                radial-gradient(circle at 30% 70%, rgba(135, 206, 250, 0.08) 0%, transparent 60%);
+            border: 1px solid #39ff14;
+            border-radius: 6px;
+            padding: 1rem;
+            box-shadow: 
+                0 2px 10px rgba(57, 255, 20, 0.1),
+                inset 0 1px 0 rgba(0, 191, 255, 0.1);
+        }
+
+        .cert-category h4 {
+            color: #ffc107;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .cert-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .cert-list li {
+            color: #e6e6e6;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .cert-list li::before {
+            content: '🧪';
+            position: absolute;
+            left: 0;
+        }
+
+        /* Experience Section */
+        .job {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #333;
+        }
+
+        .job:last-child {
+            border-bottom: none;
+        }
+
+        .job-header {
+            margin-bottom: 1rem;
+        }
+
+        .job-title {
+            color: #ffc107;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .company {
+            color: #39ff14;
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .job-date {
+            color: #888;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+
+        .job-duties {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+
+        .job-duties li {
+            color: #e6e6e6;
+            margin-bottom: 0.8rem;
+            padding-left: 2rem;
+            position: relative;
+            line-height: 1.4;
+        }
+
+        .job-duties li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.4em;
+            width: 12px;
+            height: 12px;
+            background: linear-gradient(45deg, 
+                rgba(0, 191, 255, 0.8) 0%, 
+                rgba(135, 206, 250, 0.9) 25%,
+                rgba(30, 144, 255, 0.7) 50%,
+                rgba(70, 130, 180, 0.6) 75%,
+                rgba(0, 191, 255, 0.8) 100%);
+            border-radius: 30% 70% 70% 30%;
+            transform: rotate(45deg);
+            box-shadow: 
+                0 0 8px rgba(0, 191, 255, 0.6),
+                inset 0 0 4px rgba(135, 206, 250, 0.4);
+            animation: crystal-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes crystal-pulse {
+            0%, 100% {
+                box-shadow: 
+                    0 0 8px rgba(0, 191, 255, 0.6),
+                    inset 0 0 4px rgba(135, 206, 250, 0.4);
+                transform: rotate(45deg) scale(1);
+            }
+            50% {
+                box-shadow: 
+                    0 0 12px rgba(0, 191, 255, 0.8),
+                    inset 0 0 6px rgba(135, 206, 250, 0.6);
+                transform: rotate(45deg) scale(1.1);
+            }
+        }
+
+        /* Projects Section with enhanced crystal styling */
+        .project {
+            background: 
+                linear-gradient(135deg, rgba(255, 193, 7, 0.12) 0%, rgba(255, 193, 7, 0.06) 100%),
+                radial-gradient(circle at 70% 30%, rgba(0, 191, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(30, 144, 255, 0.06) 0%, transparent 60%);
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 
+                0 4px 15px rgba(255, 193, 7, 0.15),
+                inset 0 1px 0 rgba(135, 206, 250, 0.2);
+        }
+
+        .project h3 {
+            color: #ffc107;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-date {
+            color: #888;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .project-desc {
+            color: #e6e6e6;
+            line-height: 1.5;
+        }
+
+        /* Enhanced skills box with blue crystal effect */
+        .skills-box {
+            background: 
+                linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(255, 193, 7, 0.05) 50%),
+                radial-gradient(circle at 20% 80%, rgba(0, 191, 255, 0.08) 0%, transparent 60%);
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            position: relative;
+            box-shadow: 
+                0 0 25px rgba(255, 193, 7, 0.2),
+                inset 0 1px 0 rgba(135, 206, 250, 0.1);
+        }
+
+        .skills-box::before {
+            content: '🔬';
+            font-size: 1.5rem;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+
+        .skills-box h3 {
+            color: #ffc107;
+            margin-bottom: 1rem;
+            margin-left: 2.5rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-left: 2.5rem;
+        }
+
+        .skill-category {
+            background: 
+                linear-gradient(145deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%),
+                radial-gradient(circle at 80% 20%, rgba(30, 144, 255, 0.06) 0%, transparent 70%);
+            border: 1px solid #39ff14;
+            border-radius: 6px;
+            padding: 1rem;
+            box-shadow: 
+                0 2px 10px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(0, 191, 255, 0.1);
+        }
+
+        .skill-category h4 {
+            color: #39ff14;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .skill-list {
+            color: #e6e6e6;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        /* Quote at bottom */
+        .quote {
+            font-style: italic;
+            color: #39ff14;
+            font-size: 1.2rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+                margin: 10px;
+            }
+            
+            .name {
+                font-size: 2.5rem;
+            }
+            
+            .title {
+                font-size: 1.4rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+                margin-left: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .name {
+                font-size: 2rem;
+                letter-spacing: 1px;
+            }
+            
+            .periodic-table {
+                gap: 0.5rem;
+            }
+            
+            .element {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .skills-box {
+                padding: 1rem;
+            }
+            
+            .skills-box h3 {
+                margin-left: 2rem;
+            }
+            
+            .skills-grid {
+                margin-left: 2rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+            
+            .vapor {
+                display: none;
+            }
+            
+            .container {
+                background: white;
+                border: 1px solid black;
+                box-shadow: none;
+            }
+            
+            .element {
+                background: #ddd;
+                color: black;
+                box-shadow: none;
+            }
+            
+            .name, .section-title {
+                color: black;
+                text-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="vapor"></div>
+    <div class="crystals">
+        <div class="crystal"></div>
+        <div class="crystal"></div>
+        <div class="crystal"></div>
+        <div class="crystal"></div>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="periodic-table">
+                <div class="element">
+                    <div class="number">6</div>
+                    <div class="symbol">J</div>
+                </div>
+                <div class="element">
+                    <div class="number">12</div>
+                    <div class="symbol">C</div>
+                </div>
+                <div class="element">
+                    <div class="number">8</div>
+                    <div class="symbol">O</div>
+                </div>
+                <div class="element">
+                    <div class="number">10</div>
+                    <div class="symbol">Ok</div>
+                </div>
+            </div>
+            
+            <h1 class="name">JOHN COOK</h1>
+            <h2 class="title">CYBERSECURITY ANALYST TEAM LEAD</h2>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    📍 San Angelo, TX
+                </div>
+                <div class="contact-item">
+                    📞 <a href="tel:+13253155806">+1 325-315-5806</a>
+                </div>
+                <div class="contact-item">
+                    ✉️ <a href="mailto:jcook@solostemple.org">jcook@solostemple.org</a>
+                </div>
+                <div class="contact-item">
+                    💻 <a href="https://github.com/Masterchief-solo" target="_blank">GitHub</a>
+                </div>
+                <div class="contact-item">
+                    🔗 <a href="https://www.linkedin.com/in/john-cook-so2" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Summary -->
+        <div class="skills-box">
+            <h3>Lab Specializations</h3>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Threat Analysis</h4>
+                    <div class="skill-list">CrowdStrike Falcon, Darktrace, Splunk, Security Incident Response, Threat Hunting, Malware Analysis</div>
+                </div>
+                <div class="skill-category">
+                    <h4>Cloud Security</h4>
+                    <div class="skill-list">AWS, Azure, Google Cloud, IAM, Conditional Access, Multi-Factor Authentication, Zero Trust Architecture</div>
+                </div>
+                <div class="skill-category">
+                    <h4>Security Operations</h4>
+                    <div class="skill-list">SOC Operations, Alert Triage, Vulnerability Assessment, Security Audits, Risk Assessment, Compliance</div>
+                </div>
+                <div class="skill-category">
+                    <h4>Technical Skills</h4>
+                    <div class="skill-list">Python, JavaScript, PowerShell, SQL, Linux, Windows Server, Network Security, Endpoint Protection</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education Section -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🎓</span>
+                Education
+            </h2>
+            <div class="formula-header">Academic + Experience = Professional Excellence</div>
+            
+            <div class="education-item">
+                <h3>SOUTHERN NEW HAMPSHIRE UNIVERSITY</h3>
+                <div class="location">Manchester, NH</div>
+                <div class="degree">Master of Science in Cybersecurity</div>
+                <div class="date">Oct 2024</div>
+            </div>
+            
+            <div class="education-item">
+                <h3>ANGELO STATE UNIVERSITY</h3>
+                <div class="location">San Angelo, TX</div>
+                <div class="degree">Bachelor of Science in Psychology</div>
+                <div class="date">May 2018</div>
+            </div>
+        </div>
+
+        <!-- Certifications Section -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🏆</span>
+                Certifications
+            </h2>
+            
+            <div class="cert-grid">
+                <div class="cert-category">
+                    <h4>Cloud Platforms</h4>
+                    <ul class="cert-list">
+                        <li>AWS Certified Cloud Practitioner</li>
+                        <li>Google Associate Cloud Engineer</li>
+                        <li>Google Professional Workspace Administrator</li>
+                        <li>Google Professional ChromeOS Administrator</li>
+                    </ul>
+                </div>
+                
+                <div class="cert-category">
+                    <h4>CompTIA</h4>
+                    <ul class="cert-list">
+                        <li>IT Fundamentals</li>
+                        <li>Cloud Essentials+</li>
+                        <li>A+</li>
+                        <li>Security+</li>
+                        <li>CySA+</li>
+                    </ul>
+                </div>
+                
+                <div class="cert-category">
+                    <h4>Threat Detection & Response</h4>
+                    <ul class="cert-list">
+                        <li>CrowdStrike Certified Falcon Responder (Pending)</li>
+                        <li>Darktrace Threat Visualizer Essentials</li>
+                        <li>Darktrace Cyber Analyst</li>
+                        <li>Splunk Core Certified User</li>
+                        <li>TryHackMe Security Analyst 1</li>
+                    </ul>
+                </div>
+                
+                <div class="cert-category">
+                    <h4>Microsoft</h4>
+                    <ul class="cert-list">
+                        <li>M365 Fundamentals</li>
+                        <li>SCI Fundamentals</li>
+                        <li>Azure Fundamentals</li>
+                        <li>Azure Data & AI Fundamentals</li>
+                        <li>Power Platform Fundamentals</li>
+                    </ul>
+                </div>
+                
+                <div class="cert-category">
+                    <h4>Additional Certifications</h4>
+                    <ul class="cert-list">
+                        <li>Fortinet Certified Fundamentals & Associate</li>
+                        <li>ISC2 Certified in Cybersecurity</li>
+                        <li>Linux Professional Institute LE-1</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">💼</span>
+                Professional Experience
+            </h2>
+            <div class="formula-header">Skills × Time × Impact = Career Progression</div>
+            
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Cybersecurity Analyst Team Lead</div>
+                    <div class="company">ANGELO STATE UNIVERSITY</div>
+                    <div class="job-date">Aug 2025 – Current | San Angelo, TX</div>
+                </div>
+                <ul class="job-duties">
+                    <li>Oversee and direct the daily operations of a team of 12 staff Cybersecurity Analysts (Tier I-II), coordinating threat monitoring, alert triage, and incident response activities to ensure the effective protection of client environments</li>
+                    <li>Act as a primary technical contact for RSOC clients, delivering strategic security guidance, translating complex technical issues, and conducting regular meetings to present security posture analyses and recommendations</li>
+                    <li>Collaborate with RSOC stakeholders to develop and execute long-term security initiatives, contributing to the strategic direction of the security operations center and enhancing its overall service capabilities</li>
+                    <li>Lead and conduct regular, in-depth security assessments and audits of client infrastructure, identifying critical vulnerabilities, prioritizing remediation efforts based on risk, and developing detailed reports to guide security improvements</li>
+                </ul>
+            </div>
+            
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Cybersecurity Analyst II</div>
+                    <div class="company">ANGELO STATE UNIVERSITY</div>
+                    <div class="job-date">Feb 2025 – Aug 2025 | San Angelo, TX</div>
+                </div>
+                <ul class="job-duties">
+                    <li>Conduct threat hunting and incident response operations using CrowdStrike, Darktrace, and other tools to analyze and remediate security threats across client environments while meeting SLA and response time metrics</li>
+                    <li>Mentor and supervise a team of student analysts in SOC operations, developing and implementing training programs that improve threat detection accuracy, alert triage workflows, and reduce false positive rates</li>
+                    <li>Perform comprehensive security posture assessments of clients' infrastructure across identify, protect, detect, respond, and recover capabilities, developing detailed remediation plans and prioritizing improvements based on risk assessment</li>
+                    <li>Develop comprehensive incident reports and establish knowledge base documents that improve team-wide threat mitigation capabilities, reducing mean time to detect (MTTD) by 12% and mean time to response (MTTR) by 10%</li>
+                    <li>Deliver security posture improvement recommendations to clients through Technical Account Management responsibilities, presenting secure score analyses, detection insights, and strategic recommendations based on environmental data</li>
+                </ul>
+            </div>
+            
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Cloud Support Engineer</div>
+                    <div class="company">EVIDEN, AN ATOS BUSINESS</div>
+                    <div class="job-date">Jun 2022 – Feb 2025 | Chicago, IL</div>
+                </div>
+                <ul class="job-duties">
+                    <li>Acted in a Technical Account Management capacity for key enterprise clients, managing technical relationships, translating complex solutions, and providing strategic guidance on cloud platform utilization and security</li>
+                    <li>Provided enterprise-level cloud platform and white-glove support, managing authentication systems, browser policies, and organizational structure for Fortune 100 clients</li>
+                    <li>Architected and implemented enterprise IAM solutions including MFA rollouts, conditional access policies, and directory service integrations for 10,000+ user environments</li>
+                    <li>Implemented enterprise email security protocols including DKIM, SPF, and DMARC across multiple domains, ensuring 99.9% delivery rates</li>
+                    <li>Developed and maintained Python and JavaScript scripts utilizing Google Admin SDK and Workspace APIs for automated user lifecycle management, license assignments, and organizational unit modifications</li>
+                    <li>Executed the migration from Zendesk to Jira Service Management and Confluence, developing the department's Knowledge Base repository and configuring ticket management systems</li>
+                    <li>Served as the Tech Lead for a Fortune 100 company project, overseeing MSP-related administration and collaborating with the IT team to manage and configure Google Workspace and Google Cloud environments</li>
+                </ul>
+            </div>
+            
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Technical Support Engineer</div>
+                    <div class="company">AVIONTE STAFFING SOFTWARE</div>
+                    <div class="job-date">Apr 2022 – Jun 2022 | Bloomington, MN</div>
+                </div>
+                <ul class="job-duties">
+                    <li>Facilitated communication between Technical Services, Development, and Product teams to resolve client escalations, prioritize bug fixes, validate feature compatibility, and ensure product functionality across client environments</li>
+                    <li>Provided expert technical support for software applications, diagnosing feature malfunctions, debugging core functionality issues, performing database troubleshooting, and resolving integration challenges while maintaining high customer satisfaction scores</li>
+                    <li>Exercised logical judgment to properly assess client requests, thoroughly analyze cases to determine the scope of inquiry or reported issue and gather vital information from clients to continue troubleshooting efforts</li>
+                    <li>Resolved complex technical issues involving database performance optimization, SQL query troubleshooting, VPN connectivity problems, remote desktop protocol configurations, and both front-end user interface and back-end server issues</li>
+                </ul>
+            </div>
+            
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Desktop Support Technician</div>
+                    <div class="company">SNIDER TECHNOLOGY SERVICES</div>
+                    <div class="job-date">Oct 2021 – Apr 2022 | San Angelo, TX</div>
+                </div>
+                <ul class="job-duties">
+                    <li>Managed Office 365 tenant configurations and licensing, administered Azure Active Directory authentication and access controls, troubleshot Microsoft Exchange connectivity and mailbox issues, configured Sophos Endpoint antivirus policies and threat detection, and supported various enterprise solutions for managed services customers</li>
+                    <li>Collaborated with Tier 2 technicians to manage hybrid cloud and on-premises environments, troubleshooting Windows Server domain issues, maintaining VMware virtual infrastructure, configuring Hyper-V cluster deployments, and supporting various virtualization platforms</li>
+                    <li>Diagnosed and resolved hardware failure incidents including server, workstation, and network equipment issues, executed hardware replacement procedures and warranty claims, performed new system installations and initial configurations, ensuring compliance with client SLA response times through effective PSA system management</li>
+                    <li>Administered over 3000 endpoints spanning Windows, Mac OS, Android, iOS, and POS systems, utilizing mobile device management tools such as Intune and Jamf</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🔬</span>
+                Projects
+            </h2>
+            <div class="formula-header">Innovation + Implementation = Practical Experience</div>
+            
+            <div class="project">
+                <h3>Enterprise Homelab Environment</h3>
+                <div class="project-date">Jan 2022</div>
+                <div class="project-desc">
+                    <strong>Infrastructure:</strong> Operate comprehensive enterprise home lab environment with Ubiquiti UniFi network infrastructure, Ubuntu Server and Windows Server platforms, endpoint detection and response through CrowdStrike Falcon and Windows Defender, and device management through Microsoft Intune and Kandji.
+                    <br><br>
+                    <strong>Security Controls:</strong> Deploy advanced security controls including zone-based firewall rules, Proofpoint signature detection for intrusion prevention, Cloudflare Zero Trust network filtering with Gateway policies, and privileged access management via Admin by Request.
+                    <br><br>
+                    <strong>Malware Analysis Lab:</strong> Built a malware analysis lab using VirtualBox and Hyper-V utilizing PfSense, FlareVM, and Remnux to statically and dynamically analyze malware in a controlled, segmented network.
+                </div>
+            </div>
+        </div>
+
+        <p class="quote">
+            "I am not in danger. I am the danger!" - But in cybersecurity, we protect against it.
+        </p>
+    </div>
+
+    <script>
+        // Periodic table hover effects
+        document.querySelectorAll('.element').forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.1) rotate(5deg)';
+            });
+            
+            element.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1) rotate(0deg)';
+            });
+        });
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Random formula generator for section headers
+        const formulas = [
+            'Knowledge + Validation = Industry Recognition',
+            'Skills × Time × Impact = Career Progression',
+            'Innovation + Implementation = Practical Experience',
+            'Academic + Experience = Professional Excellence',
+            'Threat Detection + Response = Security Excellence'
+        ];
+
+        // Animate section appearances on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'slideUp 0.8s ease-out';
+                    entry.target.style.opacity = '1';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            observer.observe(section);
+        });
+
+        // Add typing effect to the main title
+        const nameElement = document.querySelector('.name');
+        const originalText = nameElement.textContent;
+        nameElement.textContent = '';
+        
+        let i = 0;
+        const typeWriter = () => {
+            if (i < originalText.length) {
+                nameElement.textContent += originalText.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        };
+
+        // Start typing effect after page load
+        setTimeout(typeWriter, 500);
+
+        // Add click effect to certification items
+        document.querySelectorAll('.cert-list li').forEach(item => {
+            item.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                this.style.backgroundColor = 'rgba(57, 255, 20, 0.2)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                    this.style.backgroundColor = 'transparent';
+                }, 200);
+            });
+        });
+
+        // Enhanced scroll effects with blue crystal interactions
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const elements = document.querySelectorAll('.element');
+            const crystals = document.querySelectorAll('.crystal');
+            
+            elements.forEach((element, index) => {
+                const rate = scrolled * -0.5;
+                element.style.transform = `translateY(${rate * (index + 1) * 0.1}px) rotate(${rate * 0.05}deg)`;
+            });
+
+            // Animate crystals based on scroll
+            crystals.forEach((crystal, index) => {
+                const rate = scrolled * 0.3;
+                const baseRotation = [45, -30, 60, -45][index];
+                crystal.style.transform = `translateY(${rate * (index + 1) * 0.05}px) rotate(${baseRotation + rate * 0.1}deg)`;
+                
+                // Add shimmer effect based on scroll position
+                const shimmer = Math.sin(scrolled * 0.01 + index) * 0.5 + 0.5;
+                crystal.style.opacity = 0.3 + shimmer * 0.3;
+            });
+        });
+
+        // Add crystal shimmer animation
+        setInterval(() => {
+            const crystals = document.querySelectorAll('.crystal');
+            crystals.forEach((crystal, index) => {
+                const shimmer = Math.sin(Date.now() * 0.003 + index * 1.5) * 0.3 + 0.4;
+                crystal.style.boxShadow = `
+                    0 0 ${20 + shimmer * 15}px rgba(0, 191, 255, ${0.3 + shimmer * 0.2}),
+                    inset 0 0 20px rgba(135, 206, 250, ${0.2 + shimmer * 0.15})
+                `;
+            });
+        }, 100);
+
+        // Print functionality
+        window.addEventListener('beforeprint', () => {
+            document.body.style.background = 'white';
+            document.body.style.color = 'black';
+        });
+
+        window.addEventListener('afterprint', () => {
+            document.body.style.background = '';
+            document.body.style.color = '';
+        });
+    </script>
+</body>
+</html>
